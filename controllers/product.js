@@ -198,7 +198,58 @@ router.post("/editProd", (req, res)=>{
 
 })
 
+router.post("/addComment", (req, res)=>{
+  console.log("adding comment")
+  global.count=0
+  let username = req.session.username
+  let comment = req.body.comment
+  let id = req.body.id
 
+  var commentObject = {
+    username: username,
+    comment: comment
+  }
+
+  console.log(username)
+  console.log(comment)
+  console.log(id)
+
+  Product.addComment(commentObject, id).then((comment)=>{
+
+  req.session.comments = []
+  
+  req.session.comments.push(comment)
+  
+
+  Product.allProds().then((allProds)=>{
+    req.session.feed = []
+
+
+    for(var i=0; i < allProds.length; i++){
+     
+      req.session.feed.push(allProds[i])
+    }
+    
+    res.render("home.hbs", {
+      businessName: req.session.businessName,
+      completeName: req.session.completeName,
+      username: req.session.username,
+      email: req.session.email,
+      contactno: req.session.contactno,
+      posts: req.session.feed,
+      comments: req.session.comments
+  
+    })
+  })
+
+ 
+  
+
+  })
+
+
+  
+})
 
 
 

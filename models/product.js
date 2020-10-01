@@ -7,7 +7,11 @@ var producSchema = mongoose.Schema({
     name: String,
     description: String,
     filename: String,
-    originalfilename: String
+    originalfilename: String,
+    comments: [{
+      username: String,
+      comment: String
+    }]
 })
 
 
@@ -79,5 +83,25 @@ exports.allProds = function(){
     }, (err)=>{
       reject(err)
     })
+  })
+}
+
+exports.addComment = function(comment, id){
+  return new Promise(function(resolve, reject){
+
+    Product.findOneAndUpdate({_id: id}, {
+
+      $push: {
+        comments : comment
+      }
+    
+
+    }).then((comment)=>{
+      resolve(comment)
+    }, (err)=>{
+      reject(err)
+    })
+
+
   })
 }

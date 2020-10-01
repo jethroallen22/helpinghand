@@ -29,7 +29,7 @@ router.get("/", function(req, res){
             email: req.session.email,
             contactno: req.session.contactno,
             posts: req.session.feed
-  
+
           })
 
     }else{
