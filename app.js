@@ -13,7 +13,7 @@ const session = require("express-session")
 const app = express()
 
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://localhost:27017/helpinghand-db", {
+mongoose.connect("mongodb+srv://jethroallen22:Password123@cluster0.r7vqz.gcp.mongodb.net/helpinghand-db?retryWrites=true&w=majority", {
     useNewUrlParser: true
  })
 
