@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
@@ -16,9 +17,13 @@
     "multer-gridfs-storage": "^4.2.0",
     "multistream": "^4.0.0"
   },
+  "engines": {
+    "node": "12.18.3"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC"
