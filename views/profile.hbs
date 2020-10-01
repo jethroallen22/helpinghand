@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html id="modal1">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>user-profile</title>
+    <link rel="stylesheet" href="/css/assets-profile/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/assets-profile/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/assets-profile/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="/css/assets-profile/css/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="/css/assets-profile/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="/css/assets-profile/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="border-style: none;border-bottom: 1px solid #dcdcdc ;">
+        <div class="container-fluid"><img src="/css/assets/img/Logo.png" style="width: 50px;height: auto;margin: 10px 0px 0px 20px;margin-right: 10px;"><a class="navbar-brand" href="/">Helping Hand</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse d-flex flex-grow-1 justify-content-end" id="navcol-1">
+                <ul class="nav navbar-nav d-flex flex-grow-1 justify-content-end mr-auto">
+                    <li class="nav-item"><a class="nav-link" role="presentation" href="/inbox" style="color: #37434d;"><i class="fa fa-inbox"></i>&nbsp;Inbox</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item dropdown show d-xl-flex"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true" href="#" style="background-color: #84a9ac;color: rgb(255,255,255);border-radius: 28px;"><i class="fa fa-user-circle-o" style="margin-right: 5px;"></i>{{username}}</a>
+                        <div
+                            class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" role="presentation" href="/profile" style="font-size: 15px;"><i class="fa fa-user" style="margin-right: 10px;"></i>Profile</a>
+                            <a
+                                class="dropdown-item" role="presentation" href="#myModal-2" style="font-size: 15px;" data-toggle="modal"><i class="fa fa-gear" style="margin-right: 10px;"></i>Setup</a><a class="dropdown-item" role="presentation" href="/signout" style="font-size: 15px;"><i class="fa fa-sign-out" style="margin-right: 10px;"></i>Log out</a></div>
+        </li>
+        </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="d-xl-flex justify-content-xl-center" style="background-color: #fafafa;">
+        <div class="row" style="margin: 0px;width: 1186px;">
+            <div class="col-md-2" style="background-color: #fafafa;"></div>
+            <div class="col-md-8" style="background-color: #fafafa;border-right: 1px none #dcdcdc;border-left: 1px none #dcdcdc;height: 100%;">
+                <section style="width: 700px;height: 150px;margin: 20px;padding-top: 10px;background-color: #fafafa;border: 1px none #dbdbdb;">
+                    <div class="text-center" style="width: 700px;height: 80px;">
+                        <p style="font-size: 50px;"><strong>Profile</strong><br></p>
+                    </div>
+                </section>
+                <section style="width: 700px;height: auto;margin: 20px;border: 1px solid #dbdbdb;padding-top: 10px;background-color: #ffffff;">
+                    <p style="padding: 0px 20px 0px 20px;text-align: justify;font-size: 20px;"><strong>Name:</strong> {{completeName}}<br></p>
+                    <p style="padding: 0px 20px 0px 20px;text-align: justify;font-size: 20px;"><strong>Username:</strong> {{username}}<br></p>
+                    <p style="padding: 0px 20px 0px 20px;text-align: justify;font-size: 20px;"><strong>Email:</strong> {{email}}<br></p>
+                    <p style="padding: 0px 20px 0px 20px;text-align: justify;font-size: 20px;"><strong>Contact:</strong> {{contactno}}<br></p>
+                    <div class="d-flex justify-content-center">
+                        <div><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" href="#myModal" style="height: 38px;font-size: 16px;margin: 5px 5px;padding: 6px 12px;background-color: #84a9ac;">Edit Profile</a>
+                            <div class="modal fade" role="dialog"
+                                tabindex="-1" id="myModal">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4>Edit Profile</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                        <div class="modal-body" style="width: auto;height: auto;">
+                                            <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                                <div class="col-3 d-xl-flex align-items-xl-center">
+                                                    <div><span>Name:</span></div>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div><input type="text" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                                <div class="col-3 d-xl-flex align-items-xl-center">
+                                                    <div><span>Username:</span></div>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div><input type="text" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                                <div class="col-3 d-xl-flex align-items-xl-center">
+                                                    <div><span>Email:</span></div>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div><input type="text" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                                <div class="col-3 d-xl-flex align-items-xl-center">
+                                                    <div><span>Contact:</span></div>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div><input type="text" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="button" style="background-color: #84a9ac;">Save</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" href="#myModal-1" style="height: 38px;font-size: 16px;margin: 5px 5px;padding: 6px 12px;background-color: #84a9ac;">Setup Business</a>
+                            <div class="modal fade" role="dialog"
+                                tabindex="-1" id="myModal-1">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4>Setup Business</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                        <div class="modal-body" style="width: auto;height: auto;">
+                                            <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                                <div class="col-4 d-xl-flex align-items-xl-center">
+                                                    <div><span>Business Name:</span></div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div><input type="text" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                                <div class="col-4 d-xl-flex align-items-xl-center">
+                                                    <div><span>Description:</span></div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div></div><textarea style="width: 100%;"></textarea></div>
+                                            </div>
+                                            <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                                <div class="col-4 d-xl-flex align-items-xl-center">
+                                                    <div><span>Logo:</span></div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div></div><input type="file"></div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="button" style="background-color: #84a9ac;">Save</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-2" style="background-color: #fafafa;"></div>
+        </div>
+    </div>
+    <script src="/css/assets-profile/js/jquery.min.js"></script>
+    <script src="/css/assets-profile/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/css/assets-profile/js/Profile-Edit-Form.js"></script>
+</body>
+
+</html>

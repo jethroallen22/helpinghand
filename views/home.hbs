@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>home-layout</title>
+    <link rel="stylesheet" href="/css/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="/css/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/css/assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="/css/assets/css/styles.css">
+    <style>
+            body{
+                background-color: #84a9ac;
+            }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="border-style: none;border-bottom: 1px solid #dcdcdc ;">
+        <div class="container-fluid"><img src="/css/assets/img/Logo.png" style="width: 50px;height: auto;margin: 10px 0px 0px 20px;margin-right: 10px;"><a class="navbar-brand" href="/">Helping Hand</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse d-flex flex-grow-1 justify-content-end" id="navcol-1">
+                <ul class="nav navbar-nav d-flex flex-grow-1 justify-content-end mr-auto">
+                    <li class="nav-item"><a class="nav-link" role="presentation" href="/inbox" style="color: #37434d;"><i class="fa fa-inbox"></i>&nbsp;Inbox</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item dropdown show d-xl-flex"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true" href="#" style="background-color: #84a9ac;color: rgb(255,255,255);border-radius: 28px;"><i class="fa fa-user-circle-o" style="margin-right: 5px;"></i>{{username}}</a>
+                        <div
+                            class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" role="presentation" href="/profile" style="font-size: 15px;"><i class="fa fa-user" style="margin-right: 10px;"></i>Profile</a>
+                            <a
+                                class="dropdown-item" role="presentation" href="#myModal-2" style="font-size: 15px;" data-toggle="modal"><i class="fa fa-gear" style="margin-right: 10px;"></i>Setup</a><a class="dropdown-item" role="presentation" href="/signout" style="font-size: 15px;"><i class="fa fa-sign-out" style="margin-right: 10px;"></i>Log out</a></div>
+        </li>
+        </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="d-xl-flex justify-content-xl-center" style="background: #84a9ac;max-width: 100%;">
+        <div class="row" style="margin: 0px;width: 1186px;">
+            <div class="col-md-2" style="background-color: #84a9ac;"></div>
+            <div class="col-md-8 d-xl-flex flex-column justify-content-xl-center align-items-xl-center" style="background-color: #84a9ac;border-right: 1px none #dcdcdc;border-left: 1px none #dcdcdc;max-width: 100%;">
+                
+                
+                {{#each posts}}
+
+                <section style="width: 700px;height: 550px;border-radius: 15px 70px;margin: 20px;border: 1px solid #c3c3c3;padding-top: 10px;background-color: #ffffff;max-width: 100%;">
+                    <h1 style="padding: 0px 0px 0px 20px;font-size: 25px;"><a href="/bprofile/{{business}}"  style="color:black;">{{business}}</a><button class="btn btn-primary float-right" onclick="copyClip(this)" id="link" data-id="/bprofile/{{business}}" type="button" style="width: 25px;height: 25px;padding: 0px;margin-top: 15px;margin-right: 20px;background: transparent;border-style: none;"><i class="fa fa-share float-right d-xl-flex align-items-xl-center" style="padding: 0px 0px 0px 0px;font-size: 25px;color: rgb(32,64,81);margin-top: 0px;margin-right: 0px;border-style: none;"></i></button>
+                        <a
+                            class="btn btn-primary btn-lg float-right" role="button" data-toggle="modal" href="#myModal" style="padding: 0px;background: transparent;border-style: none;width: 25px;height: 25px;margin-top: 15px;margin-right: 20px;"><i class="fa fa-send float-right d-xl-flex align-items-xl-center" style="padding: 0px 0px 0px 0px;font-size: 25px;color: rgb(32,64,81);margin-right: 0px;margin-top: 0px;"></i></a>
+                    </h1>
+                    <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>Send Message</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                <div class="modal-body">
+                                    <div class="modal-body" style="width: auto;height: auto;">
+                                        <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                            <div class="col-4 d-xl-flex align-items-xl-center">
+                                                <div></div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                                            <div class="col-4 d-xl-flex align-items-xl-center">
+                                                <div><span>Message:</span></div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div></div><textarea style="width: 100%;"></textarea></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                            </div>
+                        </div>
+                    </div><img class="img-fluid" style="width: 696px;margin: 0;height:342.859px; margin-top:15px;" src="/photo/{{_id}}">
+                    <p style="padding: 0px 20px 0px 20px;text-align: justify;">{{description}}<br></p>
+                  
+                    <a
+                        class="float-right" href="/bprofile/{{business}}"  style="margin-right: 20px;color: #84a9ac;">Visit Now<i class="fa fa-angle-right" style="margin-left: 5px;"></i></a>
+                   
+                </section>
+
+                {{/each}}
+
+            </div>
+            <div class="col-md-2" style="background-color: #84a9ac;"></div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="myModal-2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Setup Business</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body" style="width: auto;height: auto;">
+                    <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                        <div class="col-4 d-xl-flex align-items-xl-center">
+                            <div><span>Business Name:</span></div>
+                        </div>
+                        <div class="col-8">
+                            <div><input type="text" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                        <div class="col-4 d-xl-flex align-items-xl-center">
+                            <div><span>Description:</span></div>
+                        </div>
+                        <div class="col-8">
+                            <div></div><textarea style="width: 100%;"></textarea></div>
+                    </div>
+                    <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
+                        <div class="col-4 d-xl-flex align-items-xl-center">
+                            <div><span>Logo:</span></div>
+                        </div>
+                        <div class="col-8">
+                            <div></div><input type="file"></div>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="button" style="background-color: #84a9ac;">Save</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark" style="background: rgb(32,64,81);">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-9">
+                        <h3>Helping Hand</h3>
+                        <p class="text-justify">Helping Hand works hand in hand with the aspiring businesses serving during this quarantine season. Across the Philippines, Helping Hand seeks towards strengthening the country's economy by supporting local businesses. Here, you
+                            can come across numerous of local businesses of different varieties, from food, to clothing, or even medicine. Our goal is to help the people who are trying to make ends meet to provide for themselves or their families during
+                            this tough time. Feel free to browse each business along with their products!<br><br>
+                            The packages used for this project are the following: body-parser, cookie-parser, express, mongoose, nodemon, session, crypto, handlebars, multer, express-session</p>
+                    </div>
+                    <div class="col-3 item social" style="width: 846px;"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    <div class="col">
+                        <p class="copyright">All Rights Reserved | Helping Hand © 2020<br></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <form id="visit_form" action="/product/bprofile" method="post" >
+ <input type="hidden" id="visit_id" name="id" >
+</form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+
+<script>
+    $(document).ready(function(){
+        $("button#visit").click(function(){
+            let id = $(this).attr("data-id")
+            $("input#visit_id").val(id)
+            $("form#visit_form").submit()
+        })  
+
+    })
+
+    function addDataID(id){
+        let dataID = id.getAttribute("data-id")
+        document.getElementById("edit").setAttribute("data-id",dataID)
+        document.getElementById("edit_id").value = dataID
+    }
+
+    
+</script>
+
+    <script src="/css/assets/js/jquery.min.js"></script>
+    <script src="/css/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+
+<script>
+
+    function copyClip(clip) {
+    var Link =  clip.getAttribute("data-id");
+
+
+  var tempInput = document.createElement("input");
+  tempInput.value = "helpinghand-ccapdev.herokuapp.com" + Link;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+}
+</script>
+</html>
