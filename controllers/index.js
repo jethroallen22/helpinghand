@@ -46,7 +46,7 @@ router.get("/register", (req, res) =>{
 router.get("/profile", (req, res) =>{
     global.count=0
     global.visit=0
-    if(req.session.businessName !== ""){
+    if(req.session.bussinessFlag == 1){
       
         res.render("bprofileEdit.hbs", {
             businessName: req.session.businessName,

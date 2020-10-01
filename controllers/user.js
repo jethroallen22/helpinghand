@@ -103,10 +103,12 @@ User.checkUsername(username).then((user)=>{
               console.log("I FOUND A BUSINESS NAME")
                 req.session.businessName= user.businessName
                 req.session.logo= user.filename
+                req.session.bussinessFlag=1
             }else{
               console.log("i didnt find a business name")
               req.session.businessName= ""
               console.log(user.businessName)
+              req.session.bussinessFlag=0
             }
     
           }
@@ -171,11 +173,13 @@ router.post("/login", (req, res)=>{
       req.session.email = newUser.email,
       req.session.contactno = newUser.contactNum,
       req.session.count= 0
-      if(newUser.businessName !== ""){
+      if(newUser.businessName){
           req.session.businessName= newUser.businessName
           req.session.logo= newUser.filename
+          req.session.bussinessFlag=1
       }else{
         req.session.businessName= ""
+        req.session.bussinessFlag=0
       }
 
       Product.myProds(req.session.businessName).then((prods)=>{
