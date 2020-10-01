@@ -68,6 +68,7 @@ if(!req.file){
 
 }
 
+
 User.checkUsername(username).then((user)=>{
   
   if(user){
@@ -173,13 +174,16 @@ router.post("/login", (req, res)=>{
       req.session.email = newUser.email,
       req.session.contactno = newUser.contactNum,
       req.session.count= 0
+
       if(newUser.businessName){
           req.session.businessName= newUser.businessName
           req.session.logo= newUser.filename
           req.session.bussinessFlag=1
+          console.log("bussiness found")
       }else{
         req.session.businessName= ""
         req.session.bussinessFlag=0
+        console.log("NO bussiness found")
       }
 
       Product.myProds(req.session.businessName).then((prods)=>{
@@ -227,7 +231,40 @@ router.post("/login", (req, res)=>{
 
 })
 
+router.post("/editProfile", (req, res)=>{
 
+  global.count=0
+  let fullname = req.body.name
+  let username = req.body.username
+  let email = req.body.email
+  let contact = req.body.contact
+
+
+  var editProfile = {
+    fullname: fullname,
+    username: username,
+    email: email,
+    contactNum: contact
+
+  }
+  
+
+  User.edit(req.session.userID, fullname, username, email, contact).then((newUser)=>{
+    req.session.username = username, 
+    req.session.completeName = fullname,
+    req.session.email = email,
+    req.session.contactno = contact  
+    console.log(req.session.username)  
+    res.render("profile.hbs", {
+            completeName: req.session.completeName,
+            username: req.session.username,
+            email: req.session.email,
+            contactno: req.session.contactno
+    })
+
+})
+
+})
 
 
 // always remember to export the router for index.js

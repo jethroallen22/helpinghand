@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile</title>
+    <title>user-profile</title>
     <link rel="stylesheet" href="/css/assets-profile/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/assets-profile/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="/css/assets-profile/css/Navigation-with-Button.css">
@@ -46,6 +46,9 @@
                     <p style="padding: 0px 20px 0px 20px;text-align: justify;font-size: 20px;"><strong>Email:</strong> {{email}}<br></p>
                     <p style="padding: 0px 20px 0px 20px;text-align: justify;font-size: 20px;"><strong>Contact:</strong> {{contactno}}<br></p>
                     <div class="d-flex justify-content-center">
+
+
+                         <form id="edit_profile"  action="/user/editProfile" method="POST" >
                         <div><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" href="#myModal" style="height: 38px;font-size: 16px;margin: 5px 5px;padding: 6px 12px;background-color: #84a9ac;">Edit Profile</a>
                             <div class="modal fade" role="dialog"
                                 tabindex="-1" id="myModal">
@@ -59,7 +62,7 @@
                                                     <div><span>Name:</span></div>
                                                 </div>
                                                 <div class="col-9">
-                                                    <div><input type="text" style="width: 100%;"></div>
+                                                    <div><input type="text" style="width: 100%;" name="name"></div>
                                                 </div>
                                             </div>
                                             <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
@@ -67,7 +70,7 @@
                                                     <div><span>Username:</span></div>
                                                 </div>
                                                 <div class="col-9">
-                                                    <div><input type="text" style="width: 100%;"></div>
+                                                    <div><input type="text" style="width: 100%;" name="username"></div>
                                                 </div>
                                             </div>
                                             <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
@@ -75,7 +78,7 @@
                                                     <div><span>Email:</span></div>
                                                 </div>
                                                 <div class="col-9">
-                                                    <div><input type="text" style="width: 100%;"></div>
+                                                    <div><input type="text" style="width: 100%;" name="email"></div>
                                                 </div>
                                             </div>
                                             <div class="row" style="width: auto;height: auto;margin: 0px;margin-top: 5px;margin-bottom: 5px;">
@@ -83,15 +86,17 @@
                                                     <div><span>Contact:</span></div>
                                                 </div>
                                                 <div class="col-9">
-                                                    <div><input type="text" style="width: 100%;"></div>
+                                                    <div><input type="text" style="width: 100%;" name="contact"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="button" style="background-color: #84a9ac;">Save</button></div>
+                                        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Close</button><button class="btn btn-primary" type="submit" style="background-color: #84a9ac;" id="editProfile">Save</button></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+               </form>
                         <div><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" href="#myModal-1" style="height: 38px;font-size: 16px;margin: 5px 5px;padding: 6px 12px;background-color: #84a9ac;">Setup Business</a>
                             <div class="modal fade" role="dialog"
                                 tabindex="-1" id="myModal-1">
@@ -128,6 +133,9 @@
                                 </div>
                             </div>
                         </div>
+                        
+
+
                     </div>
                 </section>
             </div>

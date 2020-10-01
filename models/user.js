@@ -99,3 +99,25 @@ exports.getLogo = function(business){
     })
   })
 }
+
+
+exports.edit = function(id, name, username, email, contact){
+
+  return new Promise(function(resolve, reject){
+
+    User.findOneAndUpdate({_id: id}, {
+
+      fullname: name,
+      username: username,
+      email: email,
+      contactNum: contact
+
+    }).then((user)=>{
+      resolve(user)
+    }, (err)=>{
+      reject(err)
+    })
+  })
+
+
+}
